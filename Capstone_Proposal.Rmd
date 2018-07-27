@@ -1,0 +1,71 @@
+---
+title: "Capstone Proposal"
+author: "Kishen Sharma"
+date: "July 27, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+###1. What is the problem you want to solve?
+
+There are not enough resources available to high school students for selecting which colleges to apply to. 
+Tuition is very expensive, and it's not always clear to high school students what their tuition may be going towards. 
+Many schools associated with the NCAA will use student tuition to fund their billion-dollar organization with no benefits going towards the student's education. 
+Metrics used by various college ranking websites are determined by: number of research articles published by a university, NCAA rankings (for prospective college athletes), graduation rates, and faculty/career service resources. 
+It is worth noting that not all of these college ranking websites are transparent with their ranking methods.   
+ 
+ 
+The process of applying to a university can be very overwhelming for an adolescent in high school, especially if they attend a public high school. 
+Public high schools are often short on counselors, making it difficult to give an adequate amount of guidance for an complex application process. 
+Students who have parents who did not attend college are at an even greater disadvantage. 
+These students often "undermatch" themselves according to the Association for Education Finance and Policy. 
+They found that 50 percent of students from low-income families undermatch into colleges less selective than are warranted by their academic record.  
+ 
+ 
+One of the reasons for underapplying is simply the cost of submitting an application. Families with parents without a college level education will generally be in a poorer socioeconomic class. 
+Public and private universities all have different application processes that cost money, thus limiting the number of universities a student can apply. 
+Additionally, graduating student athletes who have received athletic scholarship(s) have additional variables to consider during their application processes: should I take an athletic scholarship for X amount at X university or should I pay for tuition at another university (without an athletic scholarship)? 
+Should I take an athletic scholarship for X amount at X university or should I take an athletic scholarship for X amount at X university? 
+Student athletes need to know how much funding certain athletic programs receive as well as how well they can do as a graduate if they are unable to play professional sports (on average, less than 2% of student athletes go pro).
+
+
+###2. Who is your client and why do they care about this problem? 
+####In other words, what will your client DO or DECIDE based on your analysis that they wouldn't have otherwise?####
+
+Counselors will be better equipped with more information to advise students on which schools they should consider applying to (with socioeconomic mobility stats in mind). Ideally, counselors and students will have access to more information to make the application process easier, more transparent and cheaper for families. 
+Counselors would also be better prepared to advise student athletes when it comes between picking between different scholarships or if they want more information about financial success of graduates from a specific university. 
+Ideally for public high schools, though each student may have limited amount of one-on-one time with their counselor, their meetings can be more productive with more tangible and useful college information in hand.
+
+###3. What data are you going to use for this? How will you acquire this data?
+
+The Huffington Post and Chronicle of Higher Education teamed up to investigate how colleges bankroll their athletics.
+(Georgia State, for example, spent more than $100 million subsidizing sports between 2010 and 2014, mostly via student fees.) 
+The report draws on five years of revenue/expense reports from 234 Division I public universities and is publicly available.
+
+I will also be using data from a team of economists studying "the equality of opportunity". 
+They had published new research identifying which colleges "help the most children climb the income ladder." 
+For their analysis, the researchers combined federal tax records and data from the Department of Education. 
+They found that California State University-Los Angeles was one of the greatest engines of mobility; nearly 1 in 10 students enrolled there began in the bottom 20% of income but reached the top 20% by their early thirties. 
+Their research has statistics for more than 2,000 schools and is publicly available.
+
+
+###4. In brief, outline your approach to solving this problem (knowing that this might change later).
+
+Both data sets reflect similar institutions (data set reflecting socio-economic mobility primarily looks at public universities only). 
+I want to see which universities use the largest portion of student tuition to fund their collegiate programs. 
+I also want look at all other additional sources of funding for the NCAA such as alumni, state govt, etc. This will give us an idea of how strong an athletic program can be for student athletes (more funding towards athletics usually means better coaching, equipment, competition, etc.). 
+I would look at the schools that use the largest % of tuition from students to fund NCAA activities and compare how their socioeconomic mobility rates (this informs student athletes of potential career success if they do not pursue a professional career should they graduate/ this would also inform nonathlete students how much their tuition is going to NCAA and thus, not benefitting their education). 
+I will look for trends amongst the universities that have the highest socioeconomic mobility (perhaps less money goes towards NCAA or the families of the students at those universities are from a higher socioeconomic class).
+
+###5. What are your deliverables?### 
+####Typically, this would include code, along with a paper and/or a slide deck.####
+
+**Code**: code for my project w/ documentation will be uploaded to a GitHub repository.  
+**Final Report**: My final report will explain the problem, my approach and findings. This report will also include recommendations for my client for how to use my findings and also delve into future research ideas.  
+**Slide deck**: slide deck for my project will be uploaded to my GitHub repository.  
+**Blog/Presentation**:	I will share and present project in an office hours session and promote on a blog.  
+
+
