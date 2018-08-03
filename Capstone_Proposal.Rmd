@@ -9,7 +9,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-###1. What is the problem you want to solve?
+###1. What is the problem you want to solve?###
 
 There are not enough resources available to high school students for selecting which colleges to apply to. 
 Tuition is very expensive, and it's not always clear to high school students what their tuition may be going towards. 
