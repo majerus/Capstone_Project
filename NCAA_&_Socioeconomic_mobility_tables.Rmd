@@ -1,0 +1,46 @@
+---
+title: "Capstone Data Wrangling"
+author: "Kishen Sharma"
+date: "August 22, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+```{r averages by school for all columns}
+getwd()
+setwd("C:/Users/kishe/Documents/Springboard/Data Science - Beginner/Capstone Project/ncaa-financials-data")
+NCAA_Financials <- read.csv("pubDataRepo.csv")
+
+```
+
+```{r Load all Socio-Economic mobility data frames}
+setwd("C:/Users/kishe/Documents/Springboard/Data Science - Beginner/Capstone Project/Mobility Report Cards The Role of Colleges in Intergenerational Mobility")
+SM_CollegeandCohort <- read.csv("mrc_table3.csv", na.strings=c("","NA")) #stats by cohort
+write.csv(SM_CollegeandCohort, file = "SM_CollegeandCohort.csv", row.names = FALSE)
+
+Gender_and_AltChildIncomeStats <- read.csv("mrc_table4.csv")
+write.csv(Gender_and_AltChildIncomeStats, file = "Gender_and_AltChildIncomeStats.csv", row.names = FALSE)
+
+CollegeTier_and_ParentalIncome <- read.csv("mrc_table6.csv") #children's income distributions conditional on their parents' incomes by college tier.
+write.csv(CollegeTier_and_ParentalIncome, file = "CollegeTier_and_ParentalIncome.csv", row.names = FALSE)
+
+Parental_Income_Averages <- CollegeTier_and_ParentalIncome[, -c(2:3)]
+Parental_Income_Averages <- Parental_Income_Averages %>%  group_by(par_pctile) %>% summarise_all(funs(mean))
+write.csv(Parental_Income_Averages, file = "Parental_Income_Averages.csv", row.names = FALSE)
+
+College_Characteristics <- read.csv("mrc_table10.csv")
+write.csv(College_Characteristics, file = "College_Characteristics.csv", row.names = FALSE)
+```
+```{r wrangle NCAA averages dataframe By School for specific variables}
+NCAA_df1 <- NCAA_Financials[ , grepl("unitid|chronname|Conference|city|^state$|year|^inflation_adjusted_student_fees$|^inflation_adjusted_student_fees$|^inflation_adjusted_direct_state_govt_support$|^inflation_adjusted_direct_institutional_support$|^inflation_adjusted_ncaa_distributions$|^inflation_adjusted_athletic_revenues$|^inflation_adjusted_athletic_expenses$|^inflation_adjusted_subsidy$|^inflation_adjusted_net_revenue$|^student_fees$|^subsidy$|^institutional_subsidy$|^net_revenue$", names(NCAA_Financials), ignore.case = TRUE)]
+NCAA_df1$inflation_adjusted_ncaa_distributions <- as.integer(NCAA_df1$inflation_adjusted_ncaa_distributions)
+head(NCAA_df1)
+total_avg_NCAA_df2 <- NCAA_df1
+total_avg_NCAA_df2 <- total_avg_NCAA_df2[, -c(3:6)]
+total_avg_NCAA_df2 <- total_avg_NCAA_df2 %>%  group_by(chronname) %>%  summarise_all(funs(mean))
+write.csv(total_avg_NCAA_df2, file = "NCAA_Averages_by_School.csv", row.names=FALSE)
+```
